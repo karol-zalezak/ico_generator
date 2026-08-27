@@ -1,0 +1,69 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Base palette  -->
+    <Color x:Key="WindowBgColor">#1B1D23</Color>
+    <Color x:Key="Panel1Color">#20232B</Color>
+    <Color x:Key="Panel2Color">#262A33</Color>
+    <Color x:Key="Panel3Color">#2E323C</Color>
+    <Color x:Key="BorderColor">#383D48</Color>
+    <Color x:Key="BorderLightColor">#4A505E</Color>
+
+    <Color x:Key="TextPrimaryColor">#F3F4F6</Color>
+    <Color x:Key="TextSecondaryColor">#9AA0AC</Color>
+    <Color x:Key="TextMutedColor">#6C7280</Color>
+
+    <Color x:Key="AccentColor">#6C5CE7</Color>
+    <Color x:Key="AccentHoverColor">#7C6DF0</Color>
+    <Color x:Key="AccentPressedColor">#5B4BD1</Color>
+    <Color x:Key="Accent2Color">#4F8BFF</Color>
+
+    <Color x:Key="SuccessColor">#22C55E</Color>
+    <Color x:Key="DangerColor">#EF4444</Color>
+
+    <!--  Brushes  -->
+    <SolidColorBrush x:Key="WindowBgBrush" Color="{StaticResource WindowBgColor}"/>
+    <SolidColorBrush x:Key="Panel1Brush" Color="{StaticResource Panel1Color}"/>
+    <SolidColorBrush x:Key="Panel2Brush" Color="{StaticResource Panel2Color}"/>
+    <SolidColorBrush x:Key="Panel3Brush" Color="{StaticResource Panel3Color}"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
+    <SolidColorBrush x:Key="BorderLightBrush" Color="{StaticResource BorderLightColor}"/>
+
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}"/>
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}"/>
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHoverColor}"/>
+    <SolidColorBrush x:Key="AccentPressedBrush" Color="{StaticResource AccentPressedColor}"/>
+
+    <LinearGradientBrush x:Key="AccentGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource AccentColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource Accent2Color}" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+    <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
+
+    <!--  Checkerboard used to preview transparency  -->
+    <DrawingBrush x:Key="CheckerBrush" TileMode="Tile" Viewport="0,0,16,16" ViewportUnits="Absolute" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#2A2C33">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="0,0,16,16"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#33353D">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <RectangleGeometry Rect="0,0,8,8"/>
+                            <RectangleGeometry Rect="8,8,8,8"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>
