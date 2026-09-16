@@ -24,10 +24,12 @@
     <UseWindowsForms>false</UseWindowsForms>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <NeutralLanguage>en</NeutralLanguage>
+    <ApplicationIcon>..\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Resource Include="Assets\**\*" />
+    <Resource Include="icon.ico" />
   </ItemGroup>
 
 </Project>

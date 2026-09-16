@@ -7,6 +7,7 @@
         mc:Ignorable="d" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         Title="Ico Generator" Height="900" Width="1260" MinHeight="680" MinWidth="1040"
+        Icon="pack://application:,,,/icon.ico"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="CanResize" AllowsTransparency="False"
         Background="{StaticResource WindowBgBrush}">
