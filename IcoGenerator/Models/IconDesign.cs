@@ -36,7 +36,7 @@ public sealed class IconDesign : ObservableObject
         set => SetProperty(ref _fontFamily, value);
     }
 
-    private double _fontSize = 140;
+    private double _fontSize = 100;
     public double FontSize
     {
         get => _fontSize;
@@ -78,7 +78,7 @@ public sealed class IconDesign : ObservableObject
         set => SetProperty(ref _textOpacity, value);
     }
 
-    private AnchorPosition _textAnchor = AnchorPosition.MiddleCenter;
+    private AnchorPosition _textAnchor = AnchorPosition.TopLeft;
     public AnchorPosition TextAnchor
     {
         get => _textAnchor;
@@ -145,7 +145,7 @@ public sealed class IconDesign : ObservableObject
 
     // ---- Shape ------------------------------------------------------------
 
-    private double _cornerRadius = 56;
+    private double _cornerRadius = 20;
     public double CornerRadius
     {
         get => _cornerRadius;

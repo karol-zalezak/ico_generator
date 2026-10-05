@@ -239,7 +239,7 @@
                                             </UniformGrid>
 
                                             <StackPanel Grid.Column="1" Margin="16,0,0,0" VerticalAlignment="Top">
-                                                <TextBlock Text="Anchor the text to a corner, edge, or the center. The offset sliders below then nudge it inward from whichever edges are active."
+                                                <TextBlock Text="Anchor the text to a corner, edge, or the center. The offset sliders below move it from whichever edges are active — positive values push inward, negative values push it past the edge."
                                                            Style="{StaticResource HintTextStyle}"/>
                                             </StackPanel>
                                         </Grid>
@@ -252,7 +252,7 @@
                                             <TextBlock Text="HORIZONTAL OFFSET" Style="{StaticResource FieldLabelStyle}" VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1" Text="{Binding Design.OffsetX, StringFormat={}{0:F0}px}" Style="{StaticResource FieldValueStyle}"/>
                                         </Grid>
-                                        <Slider Minimum="0" Maximum="100" Value="{Binding Design.OffsetX}" Style="{StaticResource ModernSliderStyle}" Margin="0,0,0,10"/>
+                                        <Slider Minimum="-128" Maximum="128" SmallChange="1" LargeChange="8" IsSnapToTickEnabled="True" TickFrequency="1" Value="{Binding Design.OffsetX}" Style="{StaticResource ModernSliderStyle}" Margin="0,0,0,10"/>
 
                                         <Grid Style="{StaticResource SliderLabelRowStyle}">
                                             <Grid.ColumnDefinitions>
@@ -262,7 +262,7 @@
                                             <TextBlock Text="VERTICAL OFFSET" Style="{StaticResource FieldLabelStyle}" VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1" Text="{Binding Design.OffsetY, StringFormat={}{0:F0}px}" Style="{StaticResource FieldValueStyle}"/>
                                         </Grid>
-                                        <Slider Minimum="0" Maximum="100" Value="{Binding Design.OffsetY}" Style="{StaticResource ModernSliderStyle}"/>
+                                        <Slider Minimum="-128" Maximum="128" SmallChange="1" LargeChange="8" IsSnapToTickEnabled="True" TickFrequency="1" Value="{Binding Design.OffsetY}" Style="{StaticResource ModernSliderStyle}"/>
                                     </StackPanel>
                                 </Border>
 

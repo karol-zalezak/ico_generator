@@ -56,10 +56,10 @@ public static class IconRenderer
 
         if (!string.IsNullOrEmpty(design.Text))
         {
+            // No fixed Width/Height: a fixed size larger than the margin-reduced slot makes
+            // WPF layout-clip this grid, which would cut text pushed past the edge.
             var safeArea = new Grid
             {
-                Width = pixelSize,
-                Height = pixelSize,
                 Margin = new Thickness(EdgePadding * scale)
             };
 
@@ -103,18 +103,25 @@ public static class IconRenderer
             TextTrimming = TextTrimming.None,
         };
 
-        double left = 0, top = 0, right = 0, bottom = 0;
+        // Positive offsets push inward via Margin. Negative offsets push the text past
+        // the edge via a TranslateTransform, because a negative Margin gets cut off by
+        // WPF's layout clip at the safe-area bounds instead of the icon silhouette.
+        double offsetX = design.OffsetX * scale;
+        double offsetY = design.OffsetY * scale;
+        double left = 0, top = 0, right = 0, bottom = 0, shiftX = 0, shiftY = 0;
         switch (hAlign)
         {
-            case HorizontalAlignment.Left: left = design.OffsetX * scale; break;
-            case HorizontalAlignment.Right: right = design.OffsetX * scale; break;
+            case HorizontalAlignment.Left: left = Math.Max(0, offsetX); shiftX = Math.Min(0, offsetX); break;
+            case HorizontalAlignment.Right: right = Math.Max(0, offsetX); shiftX = -Math.Min(0, offsetX); break;
         }
         switch (vAlign)
         {
-            case VerticalAlignment.Top: top = design.OffsetY * scale; break;
-            case VerticalAlignment.Bottom: bottom = design.OffsetY * scale; break;
+            case VerticalAlignment.Top: top = Math.Max(0, offsetY); shiftY = Math.Min(0, offsetY); break;
+            case VerticalAlignment.Bottom: bottom = Math.Max(0, offsetY); shiftY = -Math.Min(0, offsetY); break;
         }
         textBlock.Margin = new Thickness(left, top, right, bottom);
+        if (shiftX != 0 || shiftY != 0)
+            textBlock.RenderTransform = new TranslateTransform(shiftX, shiftY);
 
         if (design.ShowShadow)
         {

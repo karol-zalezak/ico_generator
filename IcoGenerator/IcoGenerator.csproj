@@ -24,7 +24,7 @@
     <UseWindowsForms>false</UseWindowsForms>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <NeutralLanguage>en</NeutralLanguage>
-    <ApplicationIcon>..\icon.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

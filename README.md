@@ -16,7 +16,7 @@ A small, professional-looking Windows desktop app (WPF / .NET 8) for designing a
 - **Tvar** — rádius rohov (0–128 px) s rýchlymi presetmi Square / Rounded / Squircle / Circle
 - **Okraj (stroke)** — voliteľný obrys ikony s vlastnou farbou a hrúbkou
 - **Text** — obsah, výber fontu (živý náhľad priamo vo fonte), veľkosť, tučné/kurzíva, farba, priehľadnosť, uppercase
-- **Pozícia textu** — 9-bodový výber ukotvenia (rohy / hrany / stred) + horizontálny a vertikálny odsah od zvoleného okraja
+- **Pozícia textu** — 9-bodový výber ukotvenia (rohy / hrany / stred) + horizontálny a vertikálny odsah od zvoleného okraja (−128 až +128 px; záporná hodnota posunie text za okraj ikony)
 - **Auto-kontrast textu** — automaticky zvolí bielu alebo čiernu farbu textu podľa jasu pozadia
 - **Tieň textu** — farba, rozmazanie, hĺbka, smer, priehľadnosť
 - **Live náhľad** — vrátane skutočnej veľkosti pri 16×16, 32×32, 48×48 a 256×256 px, s prepínaním pozadia náhľadu (priehľadné / svetlé / tmavé) na overenie čitateľnosti
@@ -55,7 +55,7 @@ dotnet publish IcoGenerator/IcoGenerator.csproj -c Release -r win-x64 --self-con
 - **Shape** — corner radius (0–128 px) with quick presets: Square / Rounded / Squircle / Circle
 - **Border stroke** — optional outline around the icon with its own color and thickness
 - **Text** — content, font picker (live preview in the actual typeface), size, bold/italic, color, opacity, uppercase
-- **Text position** — a 9-point anchor picker (corners / edges / center) plus horizontal and vertical offset from whichever edge is active
+- **Text position** — a 9-point anchor picker (corners / edges / center) plus horizontal and vertical offset from whichever edge is active (−128 to +128 px; negative values push the text past the icon edge)
 - **Auto-contrast text** — automatically picks black or white based on background brightness
 - **Text shadow** — color, blur, depth, direction, opacity
 - **Live preview** — including true-size previews at 16×16, 32×32, 48×48, and 256×256 px, with a switchable preview backdrop (transparent / light / dark) to check legibility
